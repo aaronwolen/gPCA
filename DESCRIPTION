@@ -11,3 +11,5 @@ Packaged: 2013-07-31 13:58:29 UTC; reesese
 NeedsCompilation: no
 Repository: CRAN
 Date/Publication: 2013-07-31 17:55:22
+Suggests: 
+    testthat
