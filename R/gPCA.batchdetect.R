@@ -18,6 +18,10 @@ gPCA.batchdetect <-
       set.seed(seed)
     }
     
+    # Establish Y matrix indicating batch
+    batch <- as.factor(batch)
+    y <- stats::model.matrix(~ batch - 1)
+    
     # Permute batch:
     permute <- matrix(NA, ncol = length(batch), nrow = 50000)
     for (j in 1:50000) {
@@ -66,11 +70,6 @@ gPCA.batchdetect <-
       stop("Matrices do not conform: length(batch)!=n")
     }
     
-    # Establish Y matrix indicating batch:
-    y <- matrix(nrow = length(batch), ncol = length(unique(batch)))
-    for (j in 1:length(unique(batch))) {
-      y[, j] <- ifelse(batch == j, 1, 0)
-    }
     if (scaleY == FALSE) {
       y2 <- scale(y, center = T, scale = F) #y2.bat
     } else {
