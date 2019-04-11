@@ -60,9 +60,6 @@ gPCA.batchdetect <-
     n <- dim(data.imp)[1]
     p <- dim(data.imp)[2]
     b <- length(unique(batch))
-    n
-    p
-    b
     
     ## Test for dimensionality:
     if (length(batch) != n) {
