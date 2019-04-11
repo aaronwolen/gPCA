@@ -1,7 +1,7 @@
 Package: gPCA
 Type: Package
 Title: Batch Effect Detection via Guided Principal Components Analysis
-Version: 1.0
+Version: 1.0.0.9000
 Date: 2013-07-25
 Author: Sarah Reese
 Maintainer: Sarah Reese <reesese@vcu.edu>
