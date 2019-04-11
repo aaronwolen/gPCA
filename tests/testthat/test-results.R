@@ -21,3 +21,9 @@ test_that("cumulative variance from guided PCA matches expected values", {
 test_that("delta values are reported for each perm", {
   expect_equal(length(out$delta.p), nperm)
 })
+
+test_that("results are not impacted by batch type", {
+  batch_fac <- factor(caseDat$batch, levels = 1:3, labels = letters[1:3])
+  out_fac <- gPCA.batchdetect(caseDat$data, batch_fac, nperm = nperm)
+  expect_equal(out_fac$delta, out$delta)
+})
